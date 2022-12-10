@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+                <app-update-cours [cours]="updatedCours" (coursUpdated)="coursUpdated($event)" [ajout]="ajout">
+                </app-update-cours>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom cours</th>
+                        <th>Description de Cours</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let cour of cours">
+                    <tr>
+                        <td>{{cour.idCours}}</td>
+                        <td>{{cour.nomCours}}</td>
+                        <td>{{cour.descriptionCours}}</td>
+                        <td><a class="btn btn-success" (click)="updateCours(cour)">Editer</a></td>
+                        <td><a class="btn btn-danger" (click)="supprimerCours(cour)">Supprimer</a></td>
+
+                    </tr>
+            </table>
+        </div>
+    </div>
+</div>

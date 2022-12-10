@@ -1,0 +1,45 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un professeur :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Professeur</label>
+            <input hidden type="text" [(ngModel)]="newprofesseur.idProf" name="idProf" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Professeur</label>
+            <input type="text" [(ngModel)]="newprofesseur.nomProf" name="nomProf" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>prenom Professeur</label>
+            <input type="text" [(ngModel)]="newprofesseur.prenomProf" name="prenomProf" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>CIN</label>
+            <input type="number" [(ngModel)]="newprofesseur.cin" name="cin" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>adresse</label>
+            <input type="text" [(ngModel)]="newprofesseur.adresse" name="adresse" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date création</label>
+            <input type="date" [(ngModel)]="newprofesseur.dateCreation" name="dateCreation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Cours</label>
+            <select class="form-control form-control-lg" id="idCours" name="idCours" [(ngModel)]="newIdCours">
+                <option *ngFor="let cors of cours" [value]="cors.idCours">
+                    {{cors.nomCours}}
+                </option>
+            </select>
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="addProfessuer()" class="btn btn-success">Ajouter</button>
+            <!--<div><h3>{{ message }}</h3></div>-->
+        </div>
+
+
+    </form>
+</div>

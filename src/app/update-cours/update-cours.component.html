@@ -1,0 +1,20 @@
+<form>
+    <div  [hidden]="ajout" >
+        <label>ID Cours</label>
+        <input type="text" [(ngModel)]="cours.idCours" name="idCours" class="form-control w-25">
+    </div>
+    <div>
+        <label>Nom Cours</label>
+        <input type="text" [(ngModel)]="cours.nomCours" name="nomCours" class="form-control"
+            placeholder="Entrez un nom de cours...">
+    </div>
+    <div>
+        <label>Description Cours</label>
+        <input type="text" [(ngModel)]="cours.descriptionCours" name="descriptionCours" class="form-control"
+            placeholder="Entrez une description  de cours...">
+    </div>
+    <div class="mt-2">
+        <button type="submit" [disabled]="!cours.nomCours" class="btn btn-success"
+            (click)="saveCours()">{{ajout ? 'Ajouter' : 'Modifier'}}</button>
+    </div>
+</form>

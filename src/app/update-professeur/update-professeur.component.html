@@ -1,0 +1,42 @@
+<div class="container">
+    <div>
+        <h2>Modifier un Professeur :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Professeur</label>
+            <input readonly type="text" [(ngModel)]="currentProfesseur.idProf" name="idProf" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Professeur</label>
+            <input type="text" [(ngModel)]="currentProfesseur.nomProf" name="nomProf" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>prénom Professeur</label>
+            <input type="text" [(ngModel)]="currentProfesseur.prenomProf" name="prenomProf" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>CIN Professeur</label>
+            <input type="number" [(ngModel)]="currentProfesseur.cin" name="cin" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Adresse Professeur</label>
+            <input type="text" [(ngModel)]="currentProfesseur.adresse" name="adresse" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date création</label>
+            <input type="date" [ngModel]="currentProfesseur.dateCreation | date: 'yyyy-MM-dd'"
+                (ngModelChange)=" currentProfesseur.dateCreation= $event" name="dateCreation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <select class="form-control form-control-lg" id="idCours" name="idCours" [(ngModel)]="updatedCourstId">
+                <option *ngFor="let cour of cours" [value]="cour.idCours">
+                    {{cour.nomCours}}
+                </option>
+            </select>
+        </div>  
+        <div class="mt-2">
+            <button type="submit" (click)="updateProfesseur()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>
